@@ -1,0 +1,9 @@
+typeof underfined;
+typeof 0
+typeof 10n
+typeof true
+typeof "kbtushnik"
+typeof  Symbol("id")
+typeof Math
+typeof null
+typeof alert
