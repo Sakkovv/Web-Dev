@@ -93,22 +93,23 @@ header{
     right: 0;
     bottom: 0;
     z-index: 2;
+    background: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Hero-Windows11-GlobalLaunch:VP2-859x540") repeat 50%;
 }
 .main-overlay h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
   }
-  .main-overlay img {
+.main-overlay img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     margin-bottom: 15px;
   }
-  .main-overlay p {
+.main-overlay p {
     font-size: 1rem;
     margin-bottom: 15px;
   }
-  .main-overlay button {
+.main-overlay button {
     background-color: #0067b8;
     color: #fff;
     border: none;
@@ -156,4 +157,5 @@ header{
     text-decoration: none;
     font-size: 0.9rem;
     margin-bottom: 0;
+
 }
