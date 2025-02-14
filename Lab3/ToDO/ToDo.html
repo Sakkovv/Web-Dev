@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h2 class="text-todo">ToDO List</h2>
-    </div>
     <div class="todo-container">
         <h1 class="ToDO-list">
             ToDo List
@@ -23,6 +20,19 @@
             <ul id="task_list"></ul>
         </div>
     </div>
+    <button class="btn2" id="delete-selected">Удалить выбранные</button>
+    <button class="btn2" id="delete-all">Удалить все задачи</button>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p id="confirmText">Вы уверены?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="btn btn-confirm">Да</button>
+                <button id="confirmNo" class="btn btn-cancel">Отмена</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
