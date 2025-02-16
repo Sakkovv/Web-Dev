@@ -111,6 +111,7 @@ body{
 }
 .task-checkbox {
     margin-right: 10px;
+    cursor: pointer;
 }
 .task-text {
     flex-grow: 1;
