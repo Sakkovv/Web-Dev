@@ -1,0 +1,25 @@
+<section class="products">
+    <div class="container">
+      <div class="product-list">
+        <div class="product-card" *ngFor="let product of products">
+            
+          <div class="card-content">
+            <img [src]="product.image" [alt]="product.name">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p>Рейтинг: ⭐ {{ product.rating }}</p>
+
+            <a *ngIf="product.link" [href]="product.link" target="_blank">
+              Смотреть на Kaspi.kz
+            </a>
+          </div>
+
+          <div class="card-buttons">
+            <button (click)="shareWhatsApp(product.link)">Поделиться в WhatsApp</button>
+            <button (click)="shareTelegram(product.link)">Поделиться в Telegram</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
