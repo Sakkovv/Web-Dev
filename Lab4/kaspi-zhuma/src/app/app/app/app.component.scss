@@ -1,0 +1,20 @@
+.category-list {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .category-list button {
+    padding: 8px 16px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .category-list button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }

@@ -1,0 +1,17 @@
+<div class="product-item">
+    <img [src]="product.image" [alt]="product.name">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p><strong>Цена:</strong> {{ product.price }} ₸</p>
+    <p>Рейтинг: ⭐ {{ product.rating }}</p>
+    <p>Лайков: {{ product.likes }}</p>
+    <a *ngIf="product.link" [href]="product.link" target="_blank">Смотреть на Kaspi.kz</a>
+    <div class="buttons">
+      <button (click)="onLike()" [disabled]="product.hasVoted" class="like">
+        Like
+      </button>
+      <button (click)="onRemove()" class="remove">
+        Remove
+      </button>
+    </div>
+  </div>
