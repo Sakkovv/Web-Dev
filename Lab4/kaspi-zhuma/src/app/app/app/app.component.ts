@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { ProductListComponent } from '../product-list/product-list.component';
+import { HeaderComponent } from '../../header/header.component';
 
 interface Product{
   id: number;
@@ -10,6 +12,7 @@ interface Product{
   likes: number;
   image: string;
   link: string;
+  hasVoted?: boolean;
 }
 
 interface Category{
@@ -20,10 +23,12 @@ interface Category{
 @Component({
   selector: 'app-app',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HeaderComponent, ProductListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent {
   categories: Category[] = [
     {
@@ -92,11 +97,12 @@ export class AppComponent {
       ]
     }
   ];
-  selectedCategory: Category | null= null;
+  selectedCategory: Category | null = null;
 
-  selectCategory(category: Category){
+  selectCategory(category: Category) {
     this.selectedCategory = category;
   }
+
   removeProduct(productId: number) {
     if (this.selectedCategory) {
       this.selectedCategory.products = this.selectedCategory.products.filter(
@@ -104,10 +110,11 @@ export class AppComponent {
       );
     }
   }
-  updateLikes(event: {id:number, likes:number}){
-    if(this.selectedCategory){
+
+  updateLikes(event: { id: number, likes: number }) {
+    if (this.selectedCategory) {
       const product = this.selectedCategory.products.find(p => p.id === event.id);
-      if(product){
+      if (product) {
         product.likes = event.likes;
       }
     }

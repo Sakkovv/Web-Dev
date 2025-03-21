@@ -11,6 +11,7 @@ interface Product {
   likes: number;
   image: string;
   link: string;
+  hasVoted?: boolean;
 }
 
 @Component({
@@ -22,8 +23,8 @@ interface Product {
 })
 export class ProductListComponent {
   @Input() products: Product[] = [];
-  @Output() remove: EventEmitter<number> = new EventEmitter<number>();
-  @Output() like: EventEmitter<{ id: number, likes: number }> = new EventEmitter();
+  @Output() remove = new EventEmitter<number>();
+  @Output() like = new EventEmitter<{ id: number, likes: number }>();
 
   onRemove(productId: number) {
     this.remove.emit(productId);

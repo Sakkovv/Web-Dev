@@ -22,8 +22,8 @@ interface Product {
 })
 export class ProductItemComponent {
   @Input() product!: Product;
-  @Output() remove: EventEmitter<number> = new EventEmitter<number>();
-  @Output() like: EventEmitter<{ id: number, likes: number }> = new EventEmitter();
+  @Output() remove = new EventEmitter<number>();
+  @Output() like = new EventEmitter<{ id: number, likes: number }>();
 
   onLike() {
     if (!this.product.hasVoted) {

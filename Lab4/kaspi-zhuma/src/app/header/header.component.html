@@ -1,14 +1,23 @@
 <header class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="https://kaspi.kz/img/Logo.svg" alt="Kaspi Logo">
-      </div>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Категории</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
-      </nav>
+  <div class="container">
+    <div class="logo">
+      <img src="https://kaspi.kz/img/Logo.svg" alt="Kaspi Logo">
     </div>
-  </header>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li class="dropdown">
+          <a href="#" (click)="toggleDropdown($event)">Категории</a>
+          <div class="dropdown-menu" *ngIf="showDropdown">
+            <ul>
+              <li *ngFor="let category of categories" (click)="selectCategory(category)">
+                {{ category.name }}
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
